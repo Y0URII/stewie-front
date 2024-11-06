@@ -6,15 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css',
   standalone: true,
   imports: [FormsModule, HttpClientModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
   email: string = '';
-  
+
   password: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -22,8 +21,8 @@ export class LoginComponent {
   login() {
     this.authService.login(this.email, this.password).subscribe(
       (response: any) => {
-        
-        this.authService.setToken(response.token);
+        console.log('Login successful', response);
+        this.authService.setToken(response.accessToken);
         this.router.navigate(['/home']);
       },
       (error) => {

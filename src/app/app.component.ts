@@ -13,7 +13,8 @@ import { AppRoutingModule } from './app.routes';
   imports: [
     RouterOutlet,
     HttpClientModule,
-    FormsModule],
+    FormsModule
+  ],
   providers: [
     AuthService,
     {

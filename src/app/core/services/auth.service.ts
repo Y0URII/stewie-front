@@ -11,34 +11,30 @@ export class AuthService {
     private apiUrl = environment.apiUrl;
     private jwtHelper = new JwtHelperService();
 
-    constructor(private http: HttpClient) { }
-
-    login(username: string, password: string): Observable<any> {
-        return this.http.post(`${this.apiUrl}/login`, { username, password });
-    }
+    constructor(private http: HttpClient) {}
 
     signup(username: string, email: string, password: string): Observable<any> {
         const payload = { username, email, password };
-        return this.http.post(`${this.apiUrl}/signup`, payload);
+        return this.http.post(`${this.apiUrl}/v1/auth/signup`, payload);
     }
 
-    // Store JWT token
+    login(email: string, password: string): Observable<any> {
+        return this.http.post(`${this.apiUrl}/v1/auth/login`, { email, password });
+    }
+
     setToken(token: string): void {
-        localStorage.setItem('token', token);
+        localStorage.setItem('accessToken', token);
     }
 
-    // Get JWT token
     getToken(): string | null {
-        return localStorage.getItem('token');
+        return localStorage.getItem('accessToken');
     }
 
-    // Check if the user is authenticated
     isAuthenticated(): boolean {
         const token = this.getToken();
         return token ? !this.jwtHelper.isTokenExpired(token) : false;
     }
 
-    // Logout method
     logout(): void {
         localStorage.removeItem('token');
     }

@@ -7,10 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.css',
   standalone: true,
   imports: [FormsModule, CommonModule, HttpClientModule],
-  templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
 })
 export class SignupComponent {
   username: string = '';
@@ -19,7 +19,7 @@ export class SignupComponent {
   confirmPassword: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   signup() {
     if (this.password !== this.confirmPassword) {
@@ -29,9 +29,8 @@ export class SignupComponent {
 
     this.authService.signup(this.username, this.email, this.password).subscribe(
       (response: any) => {
-        // Handle successful signup
         console.log('Signup successful', response);
-        this.router.navigate(['/login']); // Redirect to login after successful signup
+        this.router.navigate(['/login']);
       },
       (error) => {
         console.error('Signup failed', error);
