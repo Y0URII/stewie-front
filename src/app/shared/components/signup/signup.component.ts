@@ -7,10 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css',
   standalone: true,
   imports: [FormsModule, CommonModule, HttpClientModule],
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.css'
 })
 export class SignupComponent {
   firstname: string = '';
