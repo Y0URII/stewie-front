@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   firstname: string = '';
   lastname: string = '';
   email: string = '';
@@ -21,6 +21,12 @@ export class SignupComponent {
   errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    if (localStorage.getItem('accessToken')) {
+      this.router.navigate(['/home']);
+    }
+  }
 
   signup() {
     if (this.password !== this.confirmPassword) {
