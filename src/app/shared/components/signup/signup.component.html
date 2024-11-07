@@ -1,13 +1,22 @@
 <h2>Sign Up</h2>
 
 <form (submit)="signup()">
-  <label for="username">Username:</label>
+  <label for="firstname">Firstname:</label>
   <input
     type="text"
-    [(ngModel)]="username"
-    name="username"
+    [(ngModel)]="firstname"
+    name="firstname"
     required
-    placeholder="Enter username"
+    placeholder="Enter your firstname"
+  />
+
+  <label for="lastname">Lastname:</label>
+  <input
+    type="text"
+    [(ngModel)]="lastname"
+    name="lastname"
+    required
+    placeholder="Enter your lastname"
   />
 
   <label for="email">Email:</label>

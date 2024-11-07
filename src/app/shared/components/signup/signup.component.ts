@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [FormsModule, CommonModule, HttpClientModule],
 })
 export class SignupComponent {
-  username: string = '';
+  firstname: string = '';
+  lastname: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
@@ -27,7 +28,7 @@ export class SignupComponent {
       return;
     }
 
-    this.authService.signup(this.username, this.email, this.password).subscribe(
+    this.authService.signup(this.firstname, this.lastname, this.email, this.password).subscribe(
       (response: any) => {
         console.log('Signup successful', response);
         this.router.navigate(['/login']);
