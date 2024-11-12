@@ -4,8 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { AuthService } from './core/services/auth.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app.routes';
+import { HomeComponent } from './home/home.component';
+import { XService } from './core/services/x.service';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +13,12 @@ import { AppRoutingModule } from './app.routes';
   imports: [
     RouterOutlet,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    HomeComponent //FIX ME
   ],
   providers: [
     AuthService,
+    XService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

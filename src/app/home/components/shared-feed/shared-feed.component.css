@@ -1,0 +1,9 @@
+:host {
+    float: right;
+    width: 15rem;
+    height: auto;
+    margin-top: 1rem;
+    border-color: blue;
+    border-style: solid;
+    border-width: 1px;
+}
