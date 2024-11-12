@@ -13,8 +13,9 @@ export class XService {
 
   getXLogin(): Observable<any> {
     const headers = new HttpHeaders({
-      'origin': 'https://www.google.fr',
-      'referer': 'https://www.google.fr'
+      'Accept': '*/*',
+      'Access-Control-Allow-Origin': '*',
+      'Referer': 'https://x.com'
     });
 
     return this.http.get<any>(this.apiUrl, { headers });

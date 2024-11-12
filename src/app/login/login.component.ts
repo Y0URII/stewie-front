@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    if (localStorage.getItem('accessToken')) {
-      this.router.navigate(['/home']);;
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/home']);
     }
   }
 

@@ -17,15 +17,12 @@ import { SharedFeedComponent } from "./components/shared-feed/shared-feed.compon
 export class HomeComponent implements OnInit {
   
   constructor(private authService: AuthService, private router: Router) {
-    console.log("home token: " + this.authService.getToken());
   }
 
   ngOnInit(): void {
-    console.log("home ! :)");
-    //FIX ME
-      /*if (!this.authService.isAuthenticated()) {
+      if (!this.authService.isAuthenticated()) {
         this.router.navigate(['/login']);
-      }*/
+      }
   }
 
 }

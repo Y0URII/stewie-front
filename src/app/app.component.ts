@@ -1,10 +1,9 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { AuthService } from './core/services/auth.service';
-import { HomeComponent } from './home/home.component';
 import { XService } from './core/services/x.service';
 
 @Component({
@@ -13,8 +12,7 @@ import { XService } from './core/services/x.service';
   imports: [
     RouterOutlet,
     HttpClientModule,
-    FormsModule, 
-    HomeComponent //FIX ME
+    FormsModule
   ],
   providers: [
     AuthService,
