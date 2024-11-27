@@ -13,8 +13,8 @@ export class AuthService {
 
     constructor(private http: HttpClient) {}
 
-    signup(firstname: string, lastname: string, email: string, password: string): Observable<any> {
-        const payload = { firstname, lastname, email, password };
+    signup(firstname: string, lastname: string, username: string, email: string, password: string): Observable<any> {
+        const payload = { firstname, lastname, username, email, password };
         return this.http.post(`${this.apiUrl}/v1/auth/signup`, payload);
     }
 

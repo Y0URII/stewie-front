@@ -1,24 +1,23 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class XService {
 
-  private apiUrl = 'https://x.com';
+  private apiUrl = 'http://localhost:8080/api/v1/x';
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private authService: AuthService,) { }
 
   getXLogin(): Observable<any> {
-    const headers = new HttpHeaders({
-      'Accept': '*/*',
-      'Access-Control-Allow-Origin': '*',
-      'Referer': 'https://x.com'
-    });
+    const headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${this.authService.getToken()}`);
 
-    return this.http.get<any>(this.apiUrl, { headers });
+    return this.http.get(`${this.apiUrl}/welcome`, { headers, responseType: 'text' });
   }
 
   postData(data: any): Observable<any> {
