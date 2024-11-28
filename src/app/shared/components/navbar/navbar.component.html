@@ -1,16 +1,58 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
- 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-        </ul> 
-    </div>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarCollapse"
+    aria-controls="navbarCollapse"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Logo</a>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-button"
+          [class.active]="activeTab === tabs.Home"
+          (click)="selectTab(tabs.Home)"
+        >
+          Home
+        </button>
+        <button
+          class="nav-button"
+          [class.active]="activeTab === tabs.Youtube"
+          (click)="selectTab(tabs.Youtube)"
+        >
+          Youtube
+        </button>
+        <button
+          class="nav-button"
+          [class.active]="activeTab === tabs.Instagram"
+          (click)="selectTab(tabs.Instagram)"
+        >
+          Instagram
+        </button>
+
+        <button
+          class="nav-button"
+          [class.active]="activeTab === tabs.X"
+          (click)="selectTab(tabs.X)"
+        >
+          X
+        </button>
+      </li>
+    </ul>
+  </div>
 </div>

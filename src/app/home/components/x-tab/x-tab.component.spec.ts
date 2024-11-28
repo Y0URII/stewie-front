@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XMainComponent } from './x-main.component';
+import { XTabComponent } from './x-tab.component';
 
-describe('XMainComponent', () => {
-  let component: XMainComponent;
-  let fixture: ComponentFixture<XMainComponent>;
+describe('XTabComponent', () => {
+  let component: XTabComponent;
+  let fixture: ComponentFixture<XTabComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [XMainComponent]
+      imports: [XTabComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(XMainComponent);
+    fixture = TestBed.createComponent(XTabComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

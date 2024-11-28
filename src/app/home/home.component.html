@@ -1,7 +1,20 @@
-<app-navbar></app-navbar>
+<app-navbar (changeTab)="changeTab($event)"></app-navbar>
 
 <main>
-    <app-x-main></app-x-main>
-    <app-shared-feed></app-shared-feed>
-
+  <div class="tab-content">
+    <div *ngIf="activeTab === tabs.Home">
+      <h1>Welcome to Home</h1>
+      <p>This is the home page content.</p>
+    </div>
+    <div *ngIf="activeTab === tabs.Youtube">
+        <app-youtube-tab></app-youtube-tab>
+    </div>
+    <div *ngIf="activeTab === tabs.Instagram">
+        <app-instragram-tab></app-instragram-tab>
+    </div>
+    <div *ngIf="activeTab === tabs.X">
+        <app-x-tab></app-x-tab>
+    </div>
+  </div>
+  <app-shared-feed></app-shared-feed>
 </main>

@@ -5,13 +5,13 @@ import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-x-main',
+  selector: 'app-x-tab',
   standalone: true,
   imports: [HttpClientModule, CommonModule],
-  templateUrl: './x-main.component.html',
-  styleUrl: './x-main.component.css'
+  templateUrl: './x-tab.component.html',
+  styleUrl: './x-tab.component.css'
 })
-export class XMainComponent implements OnInit {
+export class XTabComponent implements OnInit {
 
   protected sanitizedHtml: SafeHtml = '';
   
