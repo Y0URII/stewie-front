@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { AuthService } from './core/services/auth.service';
 import { XService } from './core/services/x.service';
+import { YoutubeService } from './core/services/youtube.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { XService } from './core/services/x.service';
   providers: [
     AuthService,
     XService,
+    YoutubeService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

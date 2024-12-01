@@ -1,1 +1,6 @@
-<p>youtube-tab works!</p>
+<div
+    class="youtube-main"
+    *ngIf="sanitizedHtml"
+    [innerHtml]="sanitizedHtml"
+    translate
+  ></div>

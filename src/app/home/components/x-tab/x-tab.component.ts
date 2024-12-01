@@ -19,7 +19,6 @@ export class XTabComponent implements OnInit {
     xService.getXLogin().subscribe(data => {
       console.log(data);
       this.sanitizedHtml = this.sanitizer.bypassSecurityTrustHtml(data);
-      console.log(this.sanitizedHtml);
     })
   }
 

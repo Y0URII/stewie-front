@@ -10,7 +10,6 @@ export class XService {
 
   private apiUrl = 'http://localhost:8080/api/v1/x';
 
-
   constructor(private http: HttpClient, private authService: AuthService,) { }
 
   getXLogin(): Observable<any> {

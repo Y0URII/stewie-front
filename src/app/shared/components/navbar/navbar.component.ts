@@ -21,7 +21,6 @@ export class NavbarComponent implements OnInit {
   }
 
   selectTab(tab: ContentTabEnum) {
-    console.log("selectTab = "+tab);
     this.activeTab = tab;
     this.changeTab.emit(this.activeTab);
   }

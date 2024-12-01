@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
   }
 
   changeTab(newTab: ContentTabEnum) {
-    console.log(newTab);
     this.activeTab = newTab;
   }
 }
