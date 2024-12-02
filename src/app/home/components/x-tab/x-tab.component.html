@@ -1,6 +1,6 @@
-  <!--<div
+  <div
     class="x-main"
-    *ngIf="sanitizedHtml"
-    [innerHtml]="sanitizedHtml"
+    *ngIf="htmlPage"
+    [innerHtml]="htmlPage | safeHtml" runScripts 
     translate
-  ></div>-->
+  ></div>

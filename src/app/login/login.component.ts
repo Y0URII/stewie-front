@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         console.log('Login successful', response);
         this.authService.setToken(response.accessToken);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       },
       (error) => {
         console.error('Login failed', error);

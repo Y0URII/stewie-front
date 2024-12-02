@@ -1,6 +1,6 @@
 <div
     class="youtube-main"
-    *ngIf="sanitizedHtml"
-    [innerHtml]="sanitizedHtml"
+    *ngIf="htmlPage"
+    [innerHtml]="htmlPage | safeHtml" runScripts 
     translate
   ></div>

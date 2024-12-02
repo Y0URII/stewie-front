@@ -6,6 +6,8 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { AuthService } from './core/services/auth.service';
 import { XService } from './core/services/x.service';
 import { YoutubeService } from './core/services/youtube.service';
+import { RunScriptsDirective } from './shared/directives/runScriptsDirective';
+import { SafeHtmlPipe } from './shared/pipes/safeHtmlPipe';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,9 @@ import { YoutubeService } from './core/services/youtube.service';
   imports: [
     RouterOutlet,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RunScriptsDirective,
+    SafeHtmlPipe
   ],
   providers: [
     AuthService,

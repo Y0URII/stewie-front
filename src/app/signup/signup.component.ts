@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('accessToken')) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -40,6 +40,7 @@ export class SignupComponent implements OnInit {
       return;  
     } 
 
+    //FIXME
     /*if (this.password.length < 8) {
       this.errorMessage = 'Password must be at least 8 characters long!';
       return;
